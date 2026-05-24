@@ -1,0 +1,191 @@
+/* ============================================================
+   RUDRA TECHNOCAST — Process Page Styles
+   ============================================================ */
+
+/* ── Process Timeline ─────────────────────────────────────── */
+.process-page { background: var(--white); }
+
+.process-timeline {
+  position: relative;
+  margin-top: var(--sp-12);
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: linear-gradient(180deg, var(--red) 0%, var(--blue) 100%);
+  border-radius: 2px;
+}
+
+.timeline-step {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 0;
+  align-items: center;
+  margin-bottom: var(--sp-10);
+  position: relative;
+}
+
+.timeline-step:last-child { margin-bottom: 0; }
+
+.timeline-content {
+  padding: var(--sp-6);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--tr-normal);
+}
+
+.timeline-content:hover {
+  border-color: var(--red);
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
+
+.timeline-step:nth-child(odd) .timeline-content-left  { order: 1; }
+.timeline-step:nth-child(odd) .timeline-center         { order: 2; }
+.timeline-step:nth-child(odd) .timeline-content-right  { order: 3; visibility: hidden; }
+
+.timeline-step:nth-child(even) .timeline-content-left  { order: 3; visibility: hidden; }
+.timeline-step:nth-child(even) .timeline-center         { order: 2; }
+.timeline-step:nth-child(even) .timeline-content-right { order: 1; }
+
+.timeline-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.timeline-node {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--red);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 6px rgba(211,31,31,.1), var(--shadow-md);
+  z-index: 2;
+  transition: all var(--tr-normal);
+  flex-shrink: 0;
+}
+
+.timeline-step:hover .timeline-node {
+  background: var(--red);
+  box-shadow: 0 0 0 8px rgba(211,31,31,.15), var(--shadow-lg);
+}
+
+.timeline-node span {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--red);
+  transition: color var(--tr-normal);
+}
+
+.timeline-step:hover .timeline-node span { color: var(--white); }
+
+.process-step-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--r-sm);
+  background: rgba(211,31,31,.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--sp-4);
+}
+
+.process-step-icon svg { width: 24px; height: 24px; color: var(--red); }
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--sp-2);
+}
+
+.timeline-content p {
+  font-size: .88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.step-tags {
+  display: flex; flex-wrap: wrap;
+  gap: var(--sp-2); margin-top: var(--sp-4);
+}
+
+.step-tag {
+  padding: 3px 10px;
+  background: rgba(211,31,31,.07);
+  color: var(--red);
+  border-radius: 20px;
+  font-size: .72rem;
+  font-family: var(--font-label);
+  letter-spacing: .5px;
+}
+
+/* ── Equipment Section ────────────────────────────────────── */
+.equipment-section { background: var(--off-white); }
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+  margin-top: var(--sp-10);
+}
+
+.equipment-card {
+  background: var(--white);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  transition: all var(--tr-normal);
+  text-align: center;
+}
+
+.equipment-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.equipment-img {
+  height: 160px;
+  overflow: hidden;
+}
+
+.equipment-img img { width: 100%; height: 100%; object-fit: cover; }
+.equipment-img .img-placeholder { height: 100%; border-radius: 0; }
+
+.equipment-card-body { padding: var(--sp-4); }
+.equipment-card-body h5 { font-size: .95rem; margin-bottom: var(--sp-1); }
+.equipment-card-body p  { font-size: .8rem; color: var(--text-secondary); }
+
+/* ── Responsive Process ───────────────────────────────────── */
+@media (max-width: 1023px) {
+  .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .process-timeline::before { left: 32px; transform: none; }
+
+  .timeline-step {
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: auto;
+  }
+
+  .timeline-step:nth-child(odd) .timeline-content-left,
+  .timeline-step:nth-child(even) .timeline-content-left  { display: none; }
+  .timeline-step:nth-child(odd) .timeline-content-right,
+  .timeline-step:nth-child(even) .timeline-content-right { visibility: visible; display: block; }
+
+  .timeline-step:nth-child(odd) .timeline-center,
+  .timeline-step:nth-child(even) .timeline-center { order: 1; align-self: flex-start; padding-top: var(--sp-2); }
+
+  .timeline-step:nth-child(odd) .timeline-content-right  { order: 2; }
+  .timeline-step:nth-child(even) .timeline-content-right { order: 2; }
+
+  .timeline-content-left.hidden-col { display: none !important; }
+}
+
+@media (max-width: 767px) {
+  .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+  .timeline-node { width: 48px; height: 48px; }
+  .timeline-node span { font-size: 1rem; }
+}

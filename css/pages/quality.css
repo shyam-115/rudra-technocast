@@ -1,0 +1,171 @@
+/* ============================================================
+   RUDRA TECHNOCAST — Quality Page Styles
+   ============================================================ */
+
+.quality-statement { background: var(--white); }
+
+.quality-statement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: center;
+}
+
+.quality-statement-text p { margin-bottom: var(--sp-4); }
+
+.quality-statement-img {
+  height: 460px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.quality-statement-img img { width: 100%; height: 100%; object-fit: cover; }
+.quality-statement-img .img-placeholder { height: 100%; border-radius: 0; }
+
+.qc-checklist {
+  margin-top: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.qc-check-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--off-white);
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--red);
+}
+
+.qc-check-item svg { width: 18px; height: 18px; color: var(--whatsapp); flex-shrink: 0; }
+.qc-check-item span { font-size: .9rem; color: var(--text-primary); font-weight: 500; }
+
+/* ── Certifications ───────────────────────────────────────── */
+.certifications { background: var(--off-white); }
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+  margin-top: var(--sp-10);
+}
+
+.cert-card {
+  background: var(--white);
+  border-radius: var(--r-md);
+  padding: var(--sp-6) var(--sp-5);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  transition: all var(--tr-normal);
+}
+
+.cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--red); }
+
+.cert-icon-wrap {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(211,31,31,.07);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--sp-4);
+}
+
+.cert-icon-wrap svg { width: 36px; height: 36px; color: var(--red); }
+.cert-card h4 { font-size: 1rem; margin-bottom: var(--sp-2); }
+.cert-card p  { font-size: .82rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Testing Equipment ────────────────────────────────────── */
+.testing-equipment { background: var(--dark); }
+.testing-equipment .section-label { color: rgba(255,100,100,.9); }
+.testing-equipment .section-title { color: var(--white); }
+.testing-equipment .section-title::after { background: var(--red); }
+
+.testing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  margin-top: var(--sp-10);
+}
+
+.testing-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: all var(--tr-normal);
+}
+
+.testing-card:hover { border-color: rgba(211,31,31,.4); background: rgba(255,255,255,.08); transform: translateY(-4px); }
+
+.testing-card-img { height: 180px; overflow: hidden; }
+.testing-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.testing-card-img .img-placeholder { height: 100%; border-radius: 0; }
+
+.testing-card-body { padding: var(--sp-5); }
+.testing-card-body h4 { color: var(--white); font-size: 1rem; margin-bottom: var(--sp-2); }
+.testing-card-body p  { color: rgba(255,255,255,.55); font-size: .83rem; line-height: 1.65; }
+
+/* ── QC Process Steps ─────────────────────────────────────── */
+.qc-process { background: var(--off-white); }
+
+.qc-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+  margin-top: var(--sp-10);
+  counter-reset: qc-step;
+}
+
+.qc-step {
+  background: var(--white);
+  border-radius: var(--r-md);
+  padding: var(--sp-6) var(--sp-5);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: all var(--tr-normal);
+  counter-increment: qc-step;
+}
+
+.qc-step::before {
+  content: counter(qc-step, decimal-leading-zero);
+  position: absolute;
+  top: var(--sp-4); right: var(--sp-4);
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(211,31,31,.07);
+  line-height: 1;
+}
+
+.qc-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.qc-step-icon {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(211,31,31,.08);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--sp-4);
+}
+
+.qc-step-icon svg { width: 28px; height: 28px; color: var(--red); }
+.qc-step h4 { font-size: 1rem; margin-bottom: var(--sp-2); }
+.qc-step p  { font-size: .83rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .cert-grid      { grid-template-columns: repeat(2, 1fr); }
+  .testing-grid   { grid-template-columns: repeat(2, 1fr); }
+  .qc-steps-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .quality-statement-grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+  .quality-statement-img  { height: 260px; }
+  .cert-grid    { grid-template-columns: repeat(2, 1fr); }
+  .testing-grid { grid-template-columns: 1fr; }
+  .qc-steps-grid { grid-template-columns: 1fr; }
+}
