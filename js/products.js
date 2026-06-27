@@ -203,7 +203,7 @@
 
       // Prefilled WhatsApp Enquiry URL
       const waMessage = encodeURIComponent(`Hello Rudra Technocast, I am interested in your product "${prod.name}" (ID: ${prod.id}) shown on your website. Please share specifications and pricing.`);
-      const waLink = `https://wa.me/919427726854?text=${waMessage}`;
+      const waLink = `https://wa.me/918866683454?text=${waMessage}`;
 
       card.innerHTML = `
         <div class="prod-card-img">
@@ -311,7 +311,7 @@
 
     // WhatsApp Action Link
     const waMessage = encodeURIComponent(`Hello Rudra Technocast, I am interested in your product "${prod.name}" (ID: ${prod.id}) shown on your website. Please share specifications and pricing.`);
-    lightboxWaBtn.href = `https://wa.me/919427726854?text=${waMessage}`;
+    lightboxWaBtn.href = `https://wa.me/918866683454?text=${waMessage}`;
 
     // Show Lightbox Modal
     lightboxModal.classList.add('active');
