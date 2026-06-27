@@ -827,26 +827,99 @@
   fill: #F59E0B;
 }
 
+/* ── Industries Served ────────────────────────────────────── */
+.industries-served {
+  background: var(--white);
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-10);
+}
+
+.industry-card {
+  background: var(--off-white);
+  border-radius: var(--r-md);
+  padding: var(--sp-8) var(--sp-6);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  transition: all var(--tr-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--blue));
+  transform: scaleX(0);
+  transition: transform var(--tr-normal);
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.industry-card:hover::before {
+  transform: scaleX(1);
+}
+
+.industry-icon {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(211,31,31,.08);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--sp-4);
+  transition: all var(--tr-normal);
+}
+
+.industry-card:hover .industry-icon {
+  background: var(--red);
+}
+
+.industry-icon svg {
+  width: 28px; height: 28px;
+  color: var(--red);
+  transition: color var(--tr-normal);
+}
+
+.industry-card:hover .industry-icon svg {
+  color: var(--white);
+}
+
+.industry-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: var(--sp-2);
+  color: var(--text-primary);
+}
+
+.industry-card p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
 /* ── Responsive Home ──────────────────────────────────────── */
 @media (max-width: 1023px) {
   .why-us-grid { grid-template-columns: repeat(2, 1fr); }
   .process-steps { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
   .process-steps::before { display: none; }
   .products-preview-grid { grid-template-columns: repeat(2, 1fr); }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
   
-  /* Tablet Spacings for Floating Card Stats Bar */
-  .hero {
-    height: calc(100svh - var(--header-h));
-    min-height: calc(580px - var(--header-h));
-  }
+  .hero-slide-content h2 { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+  .hero-slide-content p { font-size: clamp(1rem, 2.5vw, 1.25rem); }
   .hero-slide .container {
-    padding-bottom: 220px !important; /* Extra breathing space for 2-row wrapped card stats bar */
+    padding-bottom: 210px !important;
   }
   .hero-controls {
-    bottom: 195px;
-  }
-  .hero-scroll-hint {
     bottom: 190px;
   }
   .stats-bar {
@@ -901,6 +974,7 @@
   .about-highlights { grid-template-columns: 1fr; }
   .why-us-grid { grid-template-columns: 1fr; }
   .products-preview-grid { grid-template-columns: 1fr; }
+  .industries-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; }
