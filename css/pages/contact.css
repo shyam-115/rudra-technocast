@@ -56,11 +56,9 @@
 /* ── Form & Map Section ───────────────────────────────────── */
 .contact-form-section { background: var(--white); }
 
-.contact-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-12);
-  align-items: start;
+.contact-map-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Form */
@@ -215,7 +213,6 @@
 
 /* ── Responsive Contact ───────────────────────────────────── */
 @media (max-width: 1023px) {
-  .contact-form-grid { grid-template-columns: 1fr; gap: var(--sp-10); }
   .map-frame { height: 320px; }
 }
 

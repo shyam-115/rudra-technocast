@@ -207,15 +207,22 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--sp-4) var(--sp-5);
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid rgba(255,255,255,.08);
   background: var(--dark);
   flex-shrink: 0;
 }
 
+.sidebar-logo {
+  display: inline-flex;
+  align-items: center;
+  background: var(--white);
+  padding: 6px 12px;
+  border-radius: var(--r-sm);
+}
+
 .sidebar-logo img {
-  height: 44px;
+  height: 32px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .sidebar-close {

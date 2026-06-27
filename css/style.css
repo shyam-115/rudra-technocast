@@ -83,6 +83,8 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -91,6 +93,7 @@ body {
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 img { display: block; max-width: 100%; height: auto; }
